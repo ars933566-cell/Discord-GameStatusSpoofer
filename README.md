@@ -1,14 +1,17 @@
 # 🎮 GameStatusSpoofer
 
-A native Windows desktop application built with C# and .NET that lets you safely trick Discord into showing custom games, unreleased alphas, or funny text directly on your user profile! No web code or heavy browser engines required.
+A native Windows desktop application built with C# and .NET that lets you safely customize your Discord status with custom games, art, and hyper-specific timestamps (including custom years, months, days, and clocks!).
+
+## 🚀 [CLICK HERE TO DOWNLOAD THE APP INSTANTLY](https://github.com/ars933566-cell/GameStatusSpoofer/releases/latest)
 
 ## ✨ Features
-* **Lightweight Native UI:** Built using standard Windows Forms controls.
-* **Instant Update:** Changes your Discord profile status the second you click the button.
-* **Pure Desktop Software:** Written in pure C# (No HTML/CSS/JS).
+* **Native Windows Interface:** Built using dark-themed Windows Forms.
+* **Ultimate Timestamp Control:** Choose between standard elapsed time, your local clock, or set a custom historical year/month/day/time.
+* **Profile Saver:** Save your game setups into `.gsp` files and load them back with one click.
+* **Image URL Integration:** Drop direct image links right into the app framework.
 
-## 🚀 How to Build and Run
-1. Download this repository or clone it to your computer.
-2. Open the folder in **Visual Studio** (2022 or newer).
-3. Click the **Start** button at the top of Visual Studio to compile and launch the app!
-4. The compiled standalone `.exe` file will be generated in your `/bin/Debug/net6.0-windows/` folder.
+## 🛠️ How to Run via Download
+1. Click the download link above and grab the latest `.zip` file.
+2. Extract the folder to your Desktop.
+3. Open the Discord Desktop app in the background.
+4. Launch `GameStatusSpoofer.exe`, paste your Discord Application ID, and customize away!
