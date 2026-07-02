@@ -1,14 +1,14 @@
-# 🎮 GameStatusSpoofer Desktop App
+# 🎮 GameStatusSpoofer
 
-An open-source desktop application built with Electron and Node.js that lets you easily trick Discord into showing custom games, unreleased alphas, or funny text directly on your user profile!
+A native Windows desktop application built with C# and .NET that lets you safely trick Discord into showing custom games, unreleased alphas, or funny text directly on your user profile! No web code or heavy browser engines required.
 
 ## ✨ Features
-* **Custom UI:** Sleek control panel to update text instantly.
-* **Image Support:** Drop in any image link to display custom art on your profile.
-* **No Bots Required:** Interacts safely and directly with your local Discord app.
+* **Lightweight Native UI:** Built using standard Windows Forms controls.
+* **Instant Update:** Changes your Discord profile status the second you click the button.
+* **Pure Desktop Software:** Written in pure C# (No HTML/CSS/JS).
 
-## 🚀 How to Run & Download
-1. Download this repository as a ZIP file and extract it.
-2. Open your terminal inside the folder and run:
-   ```bash
-   npm install
+## 🚀 How to Build and Run
+1. Download this repository or clone it to your computer.
+2. Open the folder in **Visual Studio** (2022 or newer).
+3. Click the **Start** button at the top of Visual Studio to compile and launch the app!
+4. The compiled standalone `.exe` file will be generated in your `/bin/Debug/net6.0-windows/` folder.
