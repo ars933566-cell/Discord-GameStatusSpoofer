@@ -19,4 +19,4 @@ when downloading it might say that it cannot verify the publisher or some random
 1. Click the download link above and grab the latest `.zip` file.
 2. Extract the folder to your Desktop.
 3. Open the Discord Desktop app in the background.
-4. Launch `GameStatusSpoofer.exe`, paste your Discord Application ID, and customize away!
+4. Launch `GameStatusSpoofer.exe or any setup thing you find with the logo of an CD`, paste your Discord Application ID, and customize away!
