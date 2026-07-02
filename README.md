@@ -1,20 +1,20 @@
-# 🎮 Roblox to Discord Status Bot
+# 🎭 CustomRP Ultimate Gaming Presets
 
-A lightweight, open-source Python Discord bot that connects to the Roblox Open Cloud API to display live game statistics directly inside your Discord server.
+A curated collection of custom, high-quality Rich Presence themes for the **CustomRP** desktop app. Easily trick your friends into thinking you are playing unreleased or rare games!
 
-## ✨ Features
-* **/status Command:** Fetch real-time active player counts and total game visits using Discord Slash Commands.
-* **Live Embeds:** Displays game status in clean, professional Discord embed cards.
-* **Easy Configuration:** Swap out the Roblox Universe ID to track any game instantly.
+## 🎮 Available Presets
 
-## 🛠️ Built With
-* [Python](https://www.python.org/)
-* [discord.py](https://github.com/Rapptz/discord.py) - Discord API wrapper
-* [Requests](https://requests.readthedocs.io/) - For handling Roblox API calls
+### 1. Grand Theft Auto VI
+* **Status:** Playing Online (1 of 13)
+* **Details:** Welcome To Vice City!
+* **Image:** High-res leaked box art style
 
-## 🚀 Getting Started
+### 2. Roblox Studio: Unreleased Alpha Mod
+* **Status:** Competing
+* **Details:** Debugging Physics Engine v3.0
 
-### Prerequisites
-Make sure you have Python 3.8 or higher installed, then install the dependencies:
-```bash
-pip install discord.py requests
+## 🚀 How to Use Them
+1. Download the images or copy the Imgur URLs from this repository.
+2. Open your **CustomRP** client.
+3. Paste the text fields and image URLs into the matching boxes.
+4. Click **Update Presence**!
