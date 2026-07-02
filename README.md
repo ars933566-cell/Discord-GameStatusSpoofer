@@ -1,4 +1,4 @@
-# 🎮 GameStatusSpoofer
+# 🎮 GameStatusSpoofer v1.0.0
 
 A native Windows desktop application built with C# and .NET that lets you safely customize your Discord status with custom games, art, and hyper-specific timestamps (including custom years, months, days, and clocks!).
 
