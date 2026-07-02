@@ -25,6 +25,7 @@ namespace GameStatusSpoofer
 
         // Action Buttons
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDisconnect; // New button!
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnLoad;
         private DiscordRpcClient client;
@@ -34,7 +35,7 @@ namespace GameStatusSpoofer
             // Dark UI layout configuration
             this.Text = "GameStatusSpoofer Control Panel";
             this.Width = 460;
-            this.Height = 680; // Expanded to fit calendars and clocks
+            this.Height = 680; 
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.BackColor = System.Drawing.Color.FromArgb(47, 49, 54); // Discord Dark
@@ -62,22 +63,19 @@ namespace GameStatusSpoofer
             Label lblImage = new Label() { Text = "Large Image Link (URL):", Left = 20, Top = 200, Width = 160, Font = mainFont };
             txtImageUrl = new TextBox() { Left = 190, Top = 198, Width = 230, Font = mainFont, BackColor = System.Drawing.Color.FromArgb(32, 34, 37), ForeColor = System.Drawing.Color.White };
 
-            // --- EXPLICIT TIMESTAMP PICKER GROUP ---
+            // --- TIMESTAMP PICKER GROUP ---
             GroupBox grpTimestamp = new GroupBox() { Text = "Timestamp Options", Left = 20, Top = 245, Width = 400, Height = 210, Font = mainFont, ForeColor = System.Drawing.Color.DarkGray };
             
             rdoAppStarted = new RadioButton() { Text = "Since app started (Standard Elapsed)", Left = 15, Top = 25, Width = 350, Checked = true, ForeColor = System.Drawing.Color.White };
             rdoLocalTime = new RadioButton() { Text = "Your current local time clock", Left = 15, Top = 55, Width = 350, ForeColor = System.Drawing.Color.White };
             rdoCustom = new RadioButton() { Text = "Custom Start Timestamp:", Left = 15, Top = 85, Width = 350, ForeColor = System.Drawing.Color.White };
             
-            // Calendar Element (Year / Month / Day)
             Label lblCustomDate = new Label() { Text = "Select Date:", Left = 35, Top = 120, Width = 100, ForeColor = System.Drawing.Color.White, Font = new System.Drawing.Font("Segoe UI", 9F) };
             dtpCustomDate = new DateTimePicker() { Left = 140, Top = 116, Width = 230, Format = DateTimePickerFormat.Short, Enabled = false };
             
-            // Clock Element (Hours / Minutes / Seconds)
             Label lblCustomTime = new Label() { Text = "Select Time:", Left = 35, Top = 160, Width = 100, ForeColor = System.Drawing.Color.White, Font = new System.Drawing.Font("Segoe UI", 9F) };
             dtpCustomTime = new DateTimePicker() { Left = 140, Top = 156, Width = 230, Format = DateTimePickerFormat.Time, ShowUpDown = true, Enabled = false };
 
-            // Manage enabling logic dynamically based on selected option
             rdoCustom.CheckedChanged += (s, e) => {
                 dtpCustomDate.Enabled = rdoCustom.Checked;
                 dtpCustomTime.Enabled = rdoCustom.Checked;
@@ -114,8 +112,8 @@ namespace GameStatusSpoofer
             // 8. Connect & Update Action Button
             btnUpdate = new System.Windows.Forms.Button() 
             { 
-                Text = "Connect & Update Presence", 
-                Left = 20, Top = 535, Width = 400, Height = 50, 
+                Text = "🚀 Connect & Update", 
+                Left = 20, Top = 535, Width = 190, Height = 50, 
                 Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold),
                 BackColor = System.Drawing.Color.FromArgb(88, 101, 242), // Discord Blurple
                 FlatStyle = FlatStyle.Flat
@@ -123,7 +121,19 @@ namespace GameStatusSpoofer
             btnUpdate.FlatAppearance.BorderSize = 0;
             btnUpdate.Click += BtnUpdate_Click;
 
-            // Render elements onto layout canvas
+            // 9. NEW DISCONNECT BUTTON
+            btnDisconnect = new System.Windows.Forms.Button()
+            {
+                Text = "🛑 Disconnect",
+                Left = 230, Top = 535, Width = 190, Height = 50,
+                Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold),
+                BackColor = System.Drawing.Color.FromArgb(237, 66, 69), // Discord Red
+                FlatStyle = FlatStyle.Flat
+            };
+            btnDisconnect.FlatAppearance.BorderSize = 0;
+            btnDisconnect.Click += BtnDisconnect_Click;
+
+            // Render elements
             this.Controls.Add(lblAppId); this.Controls.Add(txtAppId);
             this.Controls.Add(lblGame); this.Controls.Add(txtGameName);
             this.Controls.Add(lblDetails); this.Controls.Add(txtDetails);
@@ -132,6 +142,7 @@ namespace GameStatusSpoofer
             this.Controls.Add(grpTimestamp);
             this.Controls.Add(btnSave); this.Controls.Add(btnLoad);
             this.Controls.Add(btnUpdate);
+            this.Controls.Add(btnDisconnect);
         }
 
         private void BtnUpdate_Click(object sender, EventArgs e)
@@ -164,7 +175,6 @@ namespace GameStatusSpoofer
                         }
                     };
 
-                    // --- CALENDAR TIME CONVERSION LOGIC ---
                     if (rdoAppStarted.Checked)
                     {
                         presence.Timestamps = Timestamps.Now;
@@ -175,17 +185,14 @@ namespace GameStatusSpoofer
                     }
                     else if (rdoCustom.Checked)
                     {
-                        // Extract specific data targets chosen by UI Pickers
                         DateTime selectedDate = dtpCustomDate.Value;
                         DateTime selectedTime = dtpCustomTime.Value;
 
-                        // Combine into a singular absolute point in history
                         DateTime combinedDateTime = new DateTime(
                             selectedDate.Year, selectedDate.Month, selectedDate.Day,
                             selectedTime.Hour, selectedTime.Minute, selectedTime.Second
                         );
 
-                        // Feed directly to Discord API as universal timestamp coordinates
                         presence.Timestamps = new Timestamps()
                         {
                             Start = combinedDateTime.ToUniversalTime()
@@ -193,7 +200,7 @@ namespace GameStatusSpoofer
                     }
 
                     client.SetPresence(presence);
-                    MessageBox.Show("Success! Your custom target timestamp strategy is active.", "Status Spoofer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Success! Your custom status is live.", "Status Spoofer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -203,6 +210,22 @@ namespace GameStatusSpoofer
             catch (Exception ex)
             {
                 MessageBox.Show($"Error running execution string: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // --- NEW DISCONNECT LOGIC ---
+        private void BtnDisconnect_Click(object sender, EventArgs e)
+        {
+            if (client != null)
+            {
+                client.ClearPresence(); // Clears the game status completely from your profile card
+                client.Dispose();       // Closes the backend pipeline safely
+                client = null;
+                MessageBox.Show("Disconnected safely! Your Discord status has been cleared.", "Status Spoofer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("You aren't currently connected to Discord!", "Status Spoofer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
