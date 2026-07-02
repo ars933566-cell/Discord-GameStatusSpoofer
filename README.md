@@ -4,6 +4,7 @@ A native Windows desktop application built with C# and .NET that lets you safely
 
 ## 🚀 [CLICK HERE TO DOWNLOAD THE APP INSTANTLY](https://github.com/ars933566-cell/GameStatusSpoofer/releases/latest)
 this shit is safe so dont think your lame ass will get hacked
+
 when downloading it might say that it cannot verify the publisher or some random shit but this is safe so don't worry
 
 ## ✨ Features
