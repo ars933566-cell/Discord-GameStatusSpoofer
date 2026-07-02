@@ -4,6 +4,8 @@ A native Windows desktop application built with C# and .NET that lets you safely
 
 ## 🚀 [CLICK HERE TO DOWNLOAD THE APP INSTANTLY](https://github.com/ars933566-cell/GameStatusSpoofer/releases/latest)
 this shit is safe so dont think your lame ass will get hacked
+when downloading it might say that it cannot verify the publisher or some random shit but this is safe so don't worry
+
 ## ✨ Features
 * **Native Windows Interface:** Built using dark-themed Windows Forms.
 * **Ultimate Timestamp Control:** Choose between standard elapsed time, your local clock, or set a custom historical year/month/day/time.
@@ -15,5 +17,3 @@ this shit is safe so dont think your lame ass will get hacked
 2. Extract the folder to your Desktop.
 3. Open the Discord Desktop app in the background.
 4. Launch `GameStatusSpoofer.exe`, paste your Discord Application ID, and customize away!
-
-when downloading it might say that it cannot verify the publisher or some random shit but this is safe so don't worry
