@@ -3,7 +3,7 @@
 A native Windows desktop application built with C# and .NET that lets you safely customize your Discord status with custom games, art, and hyper-specific timestamps (including custom years, months, days, and clocks!).
 
 ## 🚀 [CLICK HERE TO DOWNLOAD THE APP INSTANTLY](https://github.com/ars933566-cell/GameStatusSpoofer/releases/latest)
-
+this shit is safe so dont think your lame ass will get hacked
 ## ✨ Features
 * **Native Windows Interface:** Built using dark-themed Windows Forms.
 * **Ultimate Timestamp Control:** Choose between standard elapsed time, your local clock, or set a custom historical year/month/day/time.
