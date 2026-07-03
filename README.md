@@ -9,7 +9,7 @@ you dont have to close your anti virus since the setup wont get ruined with anti
 
 when downloading it might say that it cannot verify the publisher or some random shit but this is safe so don't worry
 
-If you dont have an discord application the go to this website https://discord.com/developers/applications and make one
+If you dont have an discord application then go to this website https://discord.com/developers/applications and make one
 
 ## ✨ Features
 * **Native Windows Interface:** Built using dark-themed Windows Forms.
