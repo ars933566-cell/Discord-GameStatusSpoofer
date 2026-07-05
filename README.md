@@ -1,4 +1,4 @@
-# 🎮 Discord Status Customizer Pro
+# 🎮 Discord Status Customizer Pro (COMING SOON)
 
 A sleek, lightweight C# Windows Forms application that allows you to spoof and customize your Discord Rich Presence activity 24/7. Built with a modern dark-mode UI inspired by Discord's own aesthetic.
 
@@ -19,4 +19,6 @@ A sleek, lightweight C# Windows Forms application that allows you to spoof and c
 * Windows 10 or 11
 * .NET 6.0 Runtime
 * Discord Desktop App running in the background
+
+Here's an example:
 <img width="434" height="663" alt="image" src="https://github.com/user-attachments/assets/f5c9285e-a47a-4fe5-9bb2-220f15b76715" />
